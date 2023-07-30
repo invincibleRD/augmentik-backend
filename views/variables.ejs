@@ -1,0 +1,141 @@
+<!-- variables.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Variable Manipulation - Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* Add styles for the navigation bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #007bff;
+      /* Add background color */
+      color: #fff;
+      /* Set text color to white */
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .navbar-title {
+      font-size: 24px;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .admin-title {
+      font-size: 24px;
+    }
+
+    .admin-page-container {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .admin-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .admin-title,
+    .hero-section {
+      flex-basis: 45%;
+    }
+
+    .content-section {
+      flex-basis: 50%;
+    }
+
+    .form-container {
+      width: 400px;
+      margin-top: 20px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-container input[type="text"],
+    .form-container textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .form-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <div class="navbar-title">Admin</div>
+    <div class="navbar-links">
+      <a href="#hero-section">Hero Section</a>
+      <a href="#content-section">Content Section</a>
+    </div>
+  </div>
+
+
+  <!-- The container for Content Section (Initially hidden) -->
+  <div class="admin-page-container">
+    <div class="content-section" id="content-section">
+      <!-- Add Content section content here -->
+      <div class="form-container">
+    
+        <h1>Fill the Data to Change in Hero section.</h1>
+        <form method="post" action="/admin">
+          <label for="focus">Focus:</label>
+          <input type="text" name="focus" id="focus" value="<%= variable.focus %>">
+
+          <label for="text">Text:</label>
+          <textarea name="text" id="text"><%= variable.text %></textarea>
+          <h1>Fill the Data to Change in Content section.</h1>
+          <label for="reveiws">Reviews:</label>
+          <input type="text" name="reveiws" id="reveiws" value="<%= variable.reveiws %>">
+          <label for="enrollments ">Enrollments:</label>
+          <input type="text" name="enrollments " id="enrollments" value="<%= variable.enrollments %>">
+          <label for="learners">Learners:</label>
+          <input type="text" name="learners" id="learners" value="<%= variable.learners %>">
+          <label for="courses">Courses:</label>
+          <input type="text" name="courses" id="courses" value="<%= variable.courses %>">
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>
+
+</html>
